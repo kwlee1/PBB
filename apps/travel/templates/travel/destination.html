@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destination</title>
+</head>
+<body>
+    <a href="/logout">Logout</a><br>
+    <a href="/success">Home</a><br>
+    <h1>{{ trip.destination }}</h1>
+    <table>
+        <th><tr><td></td><td></td></tr></th>
+        <tr><td>Planned By: </td><td>{{ trip.owner.name }}</td></tr>
+        <tr><td>Description: </td><td>{{ trip.description }}</td></tr>
+        <tr><td>Travel Date From: </td><td>{{ trip.start }}</td></tr>
+        <tr><td>Travel Date To: </td><td>{{ trip.end }}</td></tr>
+    </table>
+    <h2>Other users joining the trip:</h2>
+    <ul>
+        {% for attendee in attendees %}
+        <li>{{ attendee.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
